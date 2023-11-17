@@ -22,6 +22,7 @@ public class MenuPanel extends JPanel {
 
 	SnakeGame snakeGame;
 	MultiplayerGame multiplayerGame;
+	AiGame aiGame;
 
 	public MenuPanel(int boardWidth, int boardHeihght, JFrame frame) {
 		this.boardWidth = boardWidth;
@@ -34,6 +35,7 @@ public class MenuPanel extends JPanel {
 		// initialize games
 		snakeGame = new SnakeGame(boardWidth, boardHeihght);
 		multiplayerGame = new MultiplayerGame(boardWidth, boardHeihght);
+		aiGame = new AiGame(boardWidth, boardHeihght);
 
 		JButton singelPlayerBtn = new JButton("SinglePlayer");
 		singelPlayerBtn.setBounds(175, 300, 100, 40);
@@ -95,6 +97,12 @@ public class MenuPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("aiBtn - button clicked");
+				frame.remove(MenuPanel.this);
+				frame.add(aiGame);
+				frame.revalidate();
+				frame.repaint();
+				aiGame.requestFocus();
+				aiGame.resetGame();
 			}
 		});
 

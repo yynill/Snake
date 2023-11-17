@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
 
-public class SnakeGame extends JPanel implements ActionListener, KeyListener {
+// remove controls - input from ai
+
+public class AiGame extends JPanel implements ActionListener, KeyListener {
     private class Tile {
         int x;
         int y;
@@ -16,8 +18,6 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
             this.y = y;
         }
     }
-
-    JFrame frame;
 
     int boardWidth;
     int boardHeihght;
@@ -35,7 +35,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
     boolean gameOver = false;
 
-    SnakeGame(int boardWidth, int boardHeihght) {
+    AiGame(int boardWidth, int boardHeihght) {
         this.boardWidth = boardWidth;
         this.boardHeihght = boardHeihght;
         setPreferredSize(new Dimension(this.boardWidth, this.boardHeihght));
@@ -165,7 +165,6 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
             velocityX = 0;
             velocityY = 0;
             gameLoop.stop();
-
         }
     }
 
