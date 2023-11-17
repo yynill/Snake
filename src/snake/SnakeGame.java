@@ -166,6 +166,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
             velocityY = 0;
             gameLoop.stop();
 
+            // comment
         }
     }
 
